@@ -1,6 +1,6 @@
 package org.example;
 
-public class Cup {
+public class Cup extends Thing{
 
     private String color;
     private Double temperature;
@@ -13,9 +13,14 @@ public class Cup {
         this.isEmpty = isEmpty;
     }
 
-    //@Override
+    @Override
+    void what() {
+        System.out.println("This is a cup");
+    }
+
+    @Override
     public String toString() {
-        return "Your cup color is " + color + " and temperature is " + temperature;
+        return "cup of color " + color + ", and temperature " + temperature;
     }
 
     public void drink() {
