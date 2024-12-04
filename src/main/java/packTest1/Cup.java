@@ -1,20 +1,23 @@
-package org.example;
+package packTest1;
 
-public class Cup extends Thing{
+import java.io.Serializable;
+
+public class Cup extends Thing implements Serializable {
 
     private String color;
     private Double temperature;
     private boolean isEmpty;
 
-    Cup(String color, Double temperature, boolean isEmpty) {
+    Cup(String color, Double temperature, boolean isEmpty, int weight) {
 
+        super(weight);
         this.color = color;
         this.temperature = temperature;
         this.isEmpty = isEmpty;
     }
 
     @Override
-    void what() {
+    public void what() {
         System.out.println("This is a cup");
     }
 
@@ -60,4 +63,5 @@ public class Cup extends Thing{
     public void fill(){
         this.isEmpty = false;
     }
+
 }
